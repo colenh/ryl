@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "linter": {
+    "rules": {
+      "style": {
+        "useFilenamingConvention": "off",
+        "noNestedTernary": "off",
+        "noRestrictedGlobals": "off",
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "useAwait": "off",
+        "noEmptyBlockStatements": "off",
+        "noUnnecessaryConditions": "off"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "nursery": {
+        "useTailwindSortedClasses": "off"
+      },
+      "complexity": {
+        "noExcessiveCognitiveComplexity": "off"
+      }
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "useSortedKeys": "off"
+      }
+    }
+  },
+  "extends": ["ultracite/biome/core", "ultracite/biome/vue"]
+}

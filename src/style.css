@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    "GT America", "Helvetica Neue", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  --font-display:
+    "GT America Condensed", "Helvetica Neue Condensed Bold", "Arial Narrow",
+    sans-serif;
+  --font-mono:
+    "GT America Mono", ui-monospace, "SF Mono", "SFMono-Regular", Menlo,
+    Consolas, monospace;
+  --color-primary: var(--brand-primary, #1e40af);
+  --color-primary-fg: var(--brand-primary-fg, #ffffff);
+  --color-primary-hover: var(--brand-primary-hover, #1d4ed8);
+  --color-secondary: var(--brand-secondary, #7c3aed);
+  --color-secondary-fg: var(--brand-secondary-fg, #ffffff);
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-hover: #f1f5f9;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-faint: #94a3b8;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.14);
+  --color-grade-a: #15803d;
+  --color-grade-a-bg: #dcfce7;
+  --color-grade-b: #4d7c0f;
+  --color-grade-b-bg: #ecfccb;
+  --color-grade-c: #a16207;
+  --color-grade-c-bg: #fef9c3;
+  --color-grade-d: #c2410c;
+  --color-grade-d-bg: #ffedd5;
+  --color-grade-f: #b91c1c;
+  --color-grade-f-bg: #fee2e2;
+  --radius: 0.25rem;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in {
+    animation: none !important;
+  }
+  .animate-spin {
+    animation: none !important;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+[role="button"],
+a {
+  cursor: pointer;
+}
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+html {
+  font-family:
+    "GT America", "Helvetica Neue", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0f172a;
+  color-scheme: light;
+  background-color: #ffffff;
+}
+
+@font-face {
+  font-family: "GT America Condensed";
+  src:
+    url("/font/gt-america/GT-America-Condensed-Bold-Trial.woff2")
+    format("woff2"),
+    url("/font/gt-america/GT-America-Condensed-Bold-Trial.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Condensed";
+  src:
+    url("/font/gt-america/GT-America-Condensed-Bold-Italic-Trial.woff2")
+    format("woff2"),
+    url("/font/gt-america/GT-America-Condensed-Bold-Italic-Trial.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Mono";
+  src:
+    url("/font/gt-america/GT-America-Mono-Regular-Trial.woff2") format("woff2"),
+    url("/font/gt-america/GT-America-Mono-Regular-Trial.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America Mono";
+  src:
+    url("/font/gt-america/GT-America-Mono-Regular-Italic-Trial.woff2")
+    format("woff2"),
+    url("/font/gt-america/GT-America-Mono-Regular-Italic-Trial.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src:
+    url("/font/gt-america/GT-America-Standard-Regular-Trial.woff2")
+    format("woff2"),
+    url("/font/gt-america/GT-America-Standard-Regular-Trial.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src:
+    url("/font/gt-america/GT-America-Standard-Regular-Italic-Trial.woff2")
+    format("woff2"),
+    url("/font/gt-america/GT-America-Standard-Regular-Italic-Trial.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src:
+    url("/font/gt-america/GT-America-Standard-Bold-Trial.woff2") format("woff2"),
+    url("/font/gt-america/GT-America-Standard-Bold-Trial.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GT America";
+  src:
+    url("/font/gt-america/GT-America-Standard-Bold-Italic-Trial.woff2")
+    format("woff2"),
+    url("/font/gt-america/GT-America-Standard-Bold-Italic-Trial.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+a {
+  color: inherit;
+}
+a:not([class]) {
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary, #1e40af);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.divide-list > * + * {
+  border-top: 1px solid var(--color-border);
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}

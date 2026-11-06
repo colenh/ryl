@@ -1,0 +1,7 @@
+# Copy this file to .dev.vars for local Worker development (used by `vite preview`).
+# In production, set secrets via: wrangler secret put TURNSTILE_SECRET_KEY
+
+# Cloudflare Turnstile secret key, only required if features.turnstile is true in config.ts
+# Get yours at https://dash.cloudflare.com (same Turnstile site, copy the Secret Key)
+# Use 1x0000000000000000000000000000000AA for always-pass testing
+TURNSTILE_SECRET_KEY="your-secret-key"

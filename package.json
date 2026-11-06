@@ -1,0 +1,36 @@
+{
+  "name": "rateyourlandlord",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vue-tsc -b && vite build",
+    "deploy": "vue-tsc -b && vite build && wrangler deploy --config dist/wrangler.json",
+    "dev": "vite",
+    "lint": "ultracite fix --unsafe",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "pinia": "^4.1.0",
+    "vue": "^3.5.44",
+    "vue-router": "5.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.4",
+    "@cloudflare/vite-plugin": "^1.67.0",
+    "@cloudflare/workers-types": "^5.20261103.1",
+    "@resvg/resvg-js": "^2.6.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.6",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/tsconfig": "^0.9.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.3",
+    "ultracite": "^8.1.1",
+    "vite": "^8.3.5",
+    "vue-tsc": "^3.3.13",
+    "wrangler": "^4"
+  }
+}
