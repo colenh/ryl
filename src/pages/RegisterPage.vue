@@ -33,6 +33,13 @@
       e.value = zodErrors(result);
       return;
     }
+    if (config.features.requireStudentEmail) {
+      const domain = result.data.email.split("@")[1] ?? "";
+      if (!config.school.studentEmailDomains.includes(domain)) {
+        e.value.email = `Only ${config.school.name} email addresses are allowed to sign up.`;
+        return;
+      }
+    }
     loading.value = true;
     error.value = "";
     if (
@@ -71,8 +78,11 @@
               Create account
             </h1>
             <p class="text-text-muted mt-2 text-sm">
+              <template v-if="config.features.requireStudentEmail">
+                Sign up requires a {{ config.school.name }} email address.
+              </template>
               <template
-                v-if="
+                v-else-if="
                   config.features.studentBadge &&
                   config.school.studentEmailDomains.length
                 "

@@ -42,6 +42,8 @@ export const config = {
     collectRentAmount: true,
     /** Show a contact form on the Contact page. If false, only the email address is shown. */
     contactForm: true,
+    /** Restrict new signups to email domains listed in school.studentEmailDomains */
+    requireStudentEmail: false,
     /** Show "Verified Student" badge on reviews from the student email domain */
     studentBadge: true,
     /** Add Cloudflare Turnstile bot-protection to login, register, contact, and reset-password forms. Requires VITE_TURNSTILE_SITE_KEY in .env */
